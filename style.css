@@ -1,0 +1,33 @@
+/* M-Pesa Button */
+.mpesa-btn {
+    background: #00a651 !important;
+    margin-top: 10px;
+}
+
+.mpesa-btn:hover {
+    background: #008c44 !important;
+}
+
+/* Loader animation */
+.loader {
+    border: 4px solid #334155;
+    border-top: 4px solid #00a651;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    animation: spin 1s linear infinite;
+    margin: 12px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#mpesaSuccess {
+    background: rgba(0, 166, 81, 0.15);
+    border: 1px solid #00a651;
+    padding: 15px;
+    border-radius: 8px;
+    color: #4ade80;
+}

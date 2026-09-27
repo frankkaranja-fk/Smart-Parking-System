@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colluci Smart Parking - Kenya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Colluci Smart Parking</h1>
+            <p>Modern Automated Parking System - Kenya</p>
+        </header>
+
+        <div class="stats">
+            <div class="stat-card">
+                <h3>Total Slots</h3>
+                <p id="totalSlots">20</p>
+            </div>
+            <div class="stat-card free">
+                <h3>Free</h3>
+                <p id="freeSlots">20</p>
+            </div>
+            <div class="stat-card occupied">
+                <h3>Occupied</h3>
+                <p id="occupiedSlots">0</p>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Parking Slots -->
+            <div class="slots-section">
+                <h2>Parking Slots</h2>
+                <div id="slotsGrid" class="slots-grid"></div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls-section">
+                <div class="card">
+                    <h2>Vehicle Entry</h2>
+                    <input type="text" id="entryPlate" placeholder="Number plate (e.g. KDA 123A)">
+                    <button onclick="vehicleEntry()">Entry / Open Barrier</button>
+                </div>
+
+                <div class="card">
+                    <h2>Vehicle Exit</h2>
+                    <input type="text" id="exitPlate" placeholder="Enter number plate">
+                    <button onclick="vehicleExit()" class="exit-btn">Calculate Fee & Exit</button>
+                </div>
+
+                <!-- Receipt + M-Pesa Section -->
+                <div class="card receipt" id="receiptCard" style="display: none;">
+                    <h2>Exit Receipt</h2>
+                    <div id="receiptContent"></div>
+
+                    <div id="mpesaSection" style="margin-top: 20px;">
+                        <button id="payMpesaBtn" onclick="startMpesaPayment()" class="mpesa-btn">
+                            Pay with M-Pesa
+                        </button>
+                    </div>
+
+                    <div id="mpesaProcessing" style="display: none; text-align: center; margin-top: 15px;">
+                        <p>Processing M-Pesa payment...</p>
+                        <div class="loader"></div>
+                        <p style="font-size: 0.9rem; color: #94a3b8;">Check your phone for STK Push</p>
+                    </div>
+
+                    <div id="mpesaSuccess" style="display: none; margin-top: 15px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
